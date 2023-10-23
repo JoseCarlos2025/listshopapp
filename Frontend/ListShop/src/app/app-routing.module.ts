@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 
+
 const routes: Routes = [
   {
     path: 'home',
@@ -12,14 +13,19 @@ const routes: Routes = [
     pathMatch: 'full'
   },
   {
+    path: 'addlist',
+    loadChildren: () => import('./addlist/addlist.module').then( m => m.AddlistPageModule)
+  },
+  {
     path: 'list',
     loadChildren: () => import('./list/list.module').then( m => m.ListPageModule)
   },
   {
-    path: 'addlist',
-    loadChildren: () => import('./addlist/addlist.module').then( m => m.AddlistPageModule)
+    path: 'additem',
+    loadChildren: () => import('./additem/additem.module').then( m => m.AdditemPageModule)
   },
 ];
+
 
 @NgModule({
   imports: [
